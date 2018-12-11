@@ -1,0 +1,764 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <title>ADHD Detection</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.bossanova.uk/css/jquery.jexcel.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/fonticons.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/bootsnav.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jexcel/1.5.7/css/jquery.jexcel.min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link href="http://cdn-na.infragistics.com/igniteui/2016.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
+    <link href="http://cdn-na.infragistics.com/igniteui/2016.2/latest/css/structure/infragistics.css" rel="stylesheet" />
+</head>
+
+<body data-spy="scroll" data-target=".navbar-collapse">
+    <style>
+        #sampleContainer ol {
+            padding: 0px 0px 0px 15px;
+            margin: 0;
+        }
+
+        #sampleContainer input {
+            margin: 10px 0;
+        }
+
+        #result {
+            display: none;
+            color: red;
+        }
+
+        #progress_bar {
+            margin: 10px 0;
+            padding: 3px;
+            border: 1px solid #000;
+            font-size: 14px;
+            clear: both;
+            opacity: 0;
+            -moz-transition: opacity 1s linear;
+            -o-transition: opacity 1s linear;
+            -webkit-transition: opacity 1s linear;
+        }
+
+            #progress_bar.loading {
+                opacity: 1.0;
+            }
+
+            #progress_bar .percent {
+                background-color: #99ccff;
+                height: auto;
+                width: 0;
+            }
+    </style>
+    <!-- Preloader -->
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_four"></div>
+            </div>
+        </div>
+    </div>
+    <!--End off Preloader -->
+
+    <div class="culmn">
+        <!--Home page style-->
+        <nav class="navbar navbar-default navbar-fixed white no-background bootsnav">
+            <!-- Start Top Search -->
+            <div class="top-search">
+                <div class="container">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Search -->
+
+            <div class="container">
+                <!-- Start Atribute Navigation -->
+                <div class="attr-nav">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-shopping-bag"></i>
+                                <span class="badge">3</span>
+                            </a>
+                        </li>
+                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        <li class="side-menu"><a href="#"><i class="fa fa-bars"></i></a></li>
+                    </ul>
+                </div>
+                <!-- End Atribute Navigation -->
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="#brand">
+                        <img src="assets/images/logo.png" class="logo logo-display m-top-10" alt="">
+                        <img src="assets/images/logo.jpg" class="logo logo-scrolled" alt="">
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li><a href="#hello">Hello</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+            <!-- Start Side Menu -->
+            <div class="side">
+                <a href="#" class="close-side"><i class="fa fa-times"></i></a>
+                <div class="widget">
+                    <h6 class="title">Custom Pages</h6>
+                    <ul class="link">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Side Menu -->
+        </nav>
+
+        <!--Home Sections-->
+        <section id="hello" class="home bg-mega">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="main_home">
+                        <div class="home_text">
+                            <h1 class="text-white">LET'S TALK<br />MACHINE LEARNING</h1>
+                        </div>
+                        <div class="home_btns m-top-40">
+
+                            <form action="/uploader" method="POST"
+                                  enctype="multipart/form-data">
+
+                                <a href="/Try" target="_blank" class="btn btn-default m-top-20">Make Your Own File</a>
+                                <label for="input" class="btn btn-default m-top-20">Upload File</label>
+                                <input type="file" name="file" id="input" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" class="btn btn-default m-top-20" style="visibility:hidden;" />
+                                <div id="progress_bar"><div class="percent">0%</div></div>
+
+                                <section id="table_edit" class="section faq" visible="none">
+
+
+
+
+
+
+
+
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="main_about">
+                                                <div class="col-md-6">
+                                                    <div class="about_accordion wow fadeIn">
+                                                        <div id="faq_main_content" class="faq_main_content">
+                                                            <h6><i class="fa fa-angle-right"></i> UNIQUE DESIGN </h6>
+                                                            <div>
+                                                                <div class="content">
+                                                                    <div class="panel-body">
+                                                                        <div id="result"></div>
+                                                                        <table id="grid1"></table>
+                                                                    </div>
+                                                                </div>
+                                                            </div> <!-- End off accordion item-1 -->
+                                                            <h6 class="open"><i class="fa fa-angle-right"></i> EXPERIENCE TEAM</h6>
+                                                            <div class="open">
+                                                                <div class="content">
+                                                                    <p>
+                                                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                                                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                                                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                                                                    </p>
+                                                                </div>
+                                                            </div> <!-- End off accordion item-2 -->
+                                                            <h6> <i class="fa fa-angle-right"></i> GREAT SERVICE </h6>
+                                                            <div>
+                                                                <div class="content">
+                                                                    <p>
+                                                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                                                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                                                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                                                                    </p>
+                                                                </div>
+                                                            </div> <!-- End off accordion item-3 -->
+                                                            <h6><i class="fa fa-angle-right"></i> FREE UPDATES </h6>
+                                                            <div>
+                                                                <div class="content">
+                                                                    <p>
+                                                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                                                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                                                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                                                                    </p>
+                                                                </div>
+                                                            </div> <!-- End off accordion item-4 -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--End off row-->
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h3 class="section-title">Examine data before MACHINE LEARNING</h3>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading" role="tab" id="headingOne">
+                                                            <h4 class="panel-title">
+                                                                <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Click me to watch your data</a>
+                                                            </h4>
+                                                        </div>
+
+                                                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                            <div class="panel-body">
+                                                                <div id="result"></div>
+                                                                <table id="grid1"></table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h3 class="section-title">Advance options</h3>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading" role="tab" id="headingOne">
+                                                            <h4 class="panel-title">
+                                                                <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Click me to watch your data</a>
+                                                            </h4>
+                                                        </div>
+
+                                                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                            <div class="panel-body">
+                                                                <div id="result"></div>
+                                                                <table id="grid1"></table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </section>
+                                <div class="home_btns m-top-40">
+                                    <input type="submit" value="Confirm your file" id="confirm_excel" class="btn btn-default m-top-20" target="_blank" />
+                                    <button class="btn btn-default m-top-20" onclick="myFunction()">Cancel</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+
+                    </div><!--End off row-->
+                </div><!--End off container -->
+            </div>
+        </section>
+        <!--End off Home Sections-->
+        <!--About Sections-->
+        <section id="about" class="about roomy-100">
+            <div class="container">
+                <div class="row">
+                    <div class="main_about">
+                        <div class="col-md-6">
+                            <div class="about_content">
+                                <h2>ABOUT US</h2>
+                                <div class="separator_left"></div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                                    quis nostrud exerci tation ullamcorper suscipit lobortis
+                                    nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor
+                                    sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                                    ullamcorper suscipit lobortis nisl ut aliquip
+                                    ex ea commodo consequat.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about_accordion wow fadeIn">
+                                <div id="faq_main_content" class="faq_main_content">
+                                    <h6><i class="fa fa-angle-right"></i> UNIQUE DESIGN </h6>
+                                    <div>
+                                        <div class="content">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                                magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                                            </p>
+                                        </div>
+                                    </div> <!-- End off accordion item-1 -->
+                                    <h6 class="open"><i class="fa fa-angle-right"></i> EXPERIENCE TEAM</h6>
+                                    <div class="open">
+                                        <div class="content">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                                magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                                            </p>
+                                        </div>
+                                    </div> <!-- End off accordion item-2 -->
+                                    <h6> <i class="fa fa-angle-right"></i> GREAT SERVICE </h6>
+                                    <div>
+                                        <div class="content">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                                magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                                            </p>
+                                        </div>
+                                    </div> <!-- End off accordion item-3 -->
+                                    <h6><i class="fa fa-angle-right"></i> FREE UPDATES </h6>
+                                    <div>
+                                        <div class="content">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                                magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                                            </p>
+                                        </div>
+                                    </div> <!-- End off accordion item-4 -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End off row-->
+            </div>
+            <!--End off container -->
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <hr />
+            <br />
+            <br />
+            <div class="container">
+                <div class="row">
+                    <div class="about_bottom_content">
+                        <div class="col-md-4">
+                            <div class="about_bottom_item m-top-20">
+                                <div class="ab_head">
+                                    <div class="ab_head_icon">
+                                        <i class="icofont icofont-fire-burn"></i>
+                                    </div>
+                                    <h6 class="m-top-20"> WE’RE CREATIVE</h6>
+                                </div>
+                                <p class="m-top-20">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing ealit,
+                                    sed diaim nonummy nibsih euismod tincidiunt laorieet doloire
+                                    magna diam aliquafm erat voluitpati.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="about_bottom_item m-top-20">
+                                <div class="ab_head">
+                                    <div class="ab_head_icon">
+                                        <i class="icofont icofont-speech-comments"></i>
+                                    </div>
+                                    <h6 class="m-top-20">WE'RE FRIENDLY</h6>
+                                </div>
+                                <p class="m-top-20">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing ealit,
+                                    sed diaim nonummy nibsih euismod tincidiunt laorieet doloire
+                                    magna diam aliquafm erat voluitpati.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="about_bottom_item m-top-20">
+                                <div class="ab_head">
+                                    <div class="ab_head_icon">
+                                        <i class="icofont icofont-heart"></i>
+                                    </div>
+                                    <h6 class="m-top-20">WE LOVE MINIMALISM</h6>
+                                </div>
+                                <p class="m-top-20">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing ealit,
+                                    sed diaim nonummy nibsih euismod tincidiunt laorieet doloire
+                                    magna diam aliquafm erat voluitpati.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End off row-->
+            </div>
+            <!--End off container -->
+        </section>
+        <!--End off About section -->
+        <!--Video section-->
+        <section id="video" class="video">
+            <div class="overlay"></div>
+            <div class="main_video roomy-100 m-top-100 m-bottom-100 text-center">
+                <div class="video_text text-center">
+                    <a href="http://www.youtube.com/watch?v=7HKoqNJtMTQ" class="video-link"><span class="fa fa-play"></span></a>
+                </div>
+            </div>
+        </section>
+        <!--End off video section -->
+        <!--Skill Sections-->
+        <section id="skill" class="skill roomy-100">
+            <div class="container">
+                <div class="row">
+                    <div class="main_skill">
+                        <div class="col-md-6">
+                            <div class="skill_content wow fadeIn">
+                                <h2>Our skill</h2>
+                                <div class="separator_left"></div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                                    quis nostrud exerci tation ullamcorper suscipit lobortis
+                                    nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor
+                                    sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                                    ullamcorper suscipit lobortis nisl ut aliquip
+                                    ex ea commodo consequat.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill_bar sm-m-top-50">
+                                <div class="teamskillbar clearfix m-top-20" data-percent="80%">
+                                    <h6>GRAPHIC DESIGN</h6>
+                                    <div class="teamskillbar-bar"></div>
+                                </div> <!-- End Skill Bar -->
+                                <div class="teamskillbar clearfix m-top-50" data-percent="75%">
+                                    <h6>TYPOGRAPHY</h6>
+                                    <div class="teamskillbar-bar"></div>
+                                </div> <!-- End Skill Bar -->
+                                <div class="teamskillbar clearfix m-top-50" data-percent="90%">
+                                    <h6>HTML / CSS</h6>
+                                    <div class="teamskillbar-bar"></div>
+                                </div> <!-- End Skill Bar -->
+                            </div>
+                        </div>
+                    </div>
+                </div><!--End off row-->
+            </div><!--End off container -->
+            <br />
+            <br />
+            <br />
+            <hr />
+            <br />
+            <br />
+            <br />
+        </section>
+        <!--End off Skill section -->
+        <!--Contact Us Section-->
+        <section id="contact" class="contact bg-mega fix">
+            <div class="container">
+                <div class="row">
+                    <div class="main_contact roomy-100 text-white">
+                        <div class="col-md-4">
+                            <div class="rage_widget">
+                                <div class="widget_head">
+                                    <h3 class="text-white">ADHD Detection</h3>
+                                    <div class="separator_small"></div>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                                    ut aliquip ex ea commodo consequat.
+                                </p>
+                                <div class="widget_socail m-top-30">
+                                    <ul class="list-inline">
+                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href=""><i class="fa fa-vimeo"></i></a></li>
+                                        <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 sm-m-top-30">
+                            <form class="" action="subcribe.php">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input id="first_name" name="first_name" type="text" placeholder="Name" class="form-control" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="6" placeholder="Message"></textarea>
+                                        </div>
+                                        <div class="form-group text-center">
+                                            <a href="" class="btn btn-primary">SEND MESSAGE</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--End off row -->
+            </div>
+            <!--End off container -->
+        </section>
+        <!--End off Contact Section-->
+        <!-- scroll up-->
+        <div class="scrollup">
+            <a href="#"><i class="fa fa-chevron-up"></i></a>
+        </div><!-- End off scroll up -->
+
+        <footer id="footer" class="footer bg-black">
+            <div class="container">
+                <div class="row">
+                    <div class="main_footer text-center p-top-40 p-bottom-30">
+                        <p class="wow fadeInRight" data-wow-duration="1s">
+                            Made with
+                            <i class="fa fa-heart"></i>
+                            by
+                            <a target="_blank" href="https://bootstrapthemes.co">Bootstrap Themes</a>
+                            2016. All Rights Reserved
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- JS includes -->
+
+    <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/jquery.collapse.js"></script>
+    <script src="assets/js/bootsnav.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyD_tAQD36pKp9v4at5AnpGbvBUsLCOSJx8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jexcel/1.5.7/js/jquery.jexcel.js"></script>
+    <script src="assets/js/jquery.easing.1.3.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/infragistics.core.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/infragistics.lob.js"></script>
+
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/modules/infragistics.ext_core.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/modules/infragistics.ext_collections.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/modules/infragistics.ext_text.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/modules/infragistics.ext_io.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/modules/infragistics.ext_ui.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/modules/infragistics.documents.core_core.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/modules/infragistics.ext_collectionsextended.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/modules/infragistics.excel_core.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/modules/infragistics.ext_threading.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/modules/infragistics.ext_web.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/modules/infragistics.xml.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/modules/infragistics.documents.core_openxml.js"></script>
+    <script type="text/javascript" src="http://cdn-na.infragistics.com/igniteui/2018.2/latest/js/modules/infragistics.excel_serialization_openxml.js"></script>
+
+    <script>
+        var progress = document.querySelector('.percent');
+        document.getElementById("table_edit").style.visibility = "hidden";
+        document.getElementById("confirm_excel").style.visibility = "hidden";
+        document.getElementById('input').addEventListener('change', handleFileSelect, false);
+
+        function errorHandler(evt) {
+            switch (evt.target.error.code) {
+                case evt.target.error.NOT_FOUND_ERR:
+                    alert('File Not Found!');
+                    break;
+                case evt.target.error.NOT_READABLE_ERR:
+                    alert('File is not readable');
+                    break;
+                case evt.target.error.ABORT_ERR:
+                    break; // noop
+                default:
+                    alert('An error occurred reading this file.');
+            };
+        }
+
+        function updateProgress(evt) {
+            // evt is an ProgressEvent.
+            if (evt.lengthComputable) {
+                var percentLoaded = Math.round((evt.loaded / evt.total) * 100);
+                // Increase the progress bar length.
+                if (percentLoaded < 100) {
+                    progress.style.width = percentLoaded + '%';
+                    progress.textContent = percentLoaded + '%';
+                }
+            }
+        }
+
+        function handleFileSelect(evt) {
+            // Reset progress indicator on new file selection.
+            progress.style.width = '0%';
+            progress.textContent = '0%';
+
+            var reader = null;
+            reader = new FileReader();
+            reader.onerror = errorHandler;
+            reader.onprogress = updateProgress;
+            reader.onabort = function (e) {
+                alert('File read cancelled');
+            };
+
+            reader.onloadstart = function (e) {
+                document.getElementById('progress_bar').className = 'loading';
+            };
+
+            reader.onload = function (e) {
+                // Ensure that the progress bar displays 100% at the end.
+                progress.style.width = '100%';
+                progress.textContent = '100%';
+                setTimeout("document.getElementById('progress_bar').className='';", 2000);
+            }
+
+            // Read in the image file as a binary string.
+            reader.readAsBinaryString(evt.target.files[0]);
+            var excelFile,
+                fileReader = new FileReader();
+
+            $("#result").hide();
+
+            fileReader.onload = function (e) {
+                var buffer = new Uint8Array(fileReader.result);
+
+                $.ig.excel.Workbook.load(buffer, function (workbook) {
+                    var column, row, newRow, cellValue, columnIndex, i,
+                        worksheet = workbook.worksheets(0),
+                        columnsNumber = 0,
+                        gridColumns = [],
+                        data = [],
+                        worksheetRowsCount;
+
+                    // Both the columns and rows in the worksheet are lazily created and because of this most of the time worksheet.columns().count() will return 0
+                    // So to get the number of columns we read the values in the first row and count. When value is null we stop counting columns:
+                    while (worksheet.rows(0).getCellValue(columnsNumber)) {
+                        columnsNumber++;
+                    }
+
+                    // Iterating through cells in first row and use the cell text as key and header text for the grid columns
+                    for (columnIndex = 0; columnIndex < columnsNumber; columnIndex++) {
+                        column = worksheet.rows(0).getCellText(columnIndex);
+                        gridColumns.push({ headerText: column, key: column });
+                    }
+
+                    // We start iterating from 1, because we already read the first row to build the gridColumns array above
+                    // We use each cell value and add it to json array, which will be used as dataSource for the grid
+                    for (i = 1, worksheetRowsCount = worksheet.rows().count(); i < worksheetRowsCount; i++) {
+                        newRow = {};
+                        row = worksheet.rows(i);
+
+                        for (columnIndex = 0; columnIndex < columnsNumber; columnIndex++) {
+                            cellValue = row.getCellText(columnIndex);
+                            newRow[gridColumns[columnIndex].key] = cellValue;
+                        }
+
+                        data.push(newRow);
+                    }
+
+                    // we can also skip passing the gridColumns use autoGenerateColumns = true, or modify the gridColumns array
+                    createGrid(data, gridColumns);
+                }, function (error) {
+                    $("#result").text("The excel file is corrupted.");
+                    $("#result").show(1000);
+                });
+            }
+
+            if (this.files.length > 0) {
+                excelFile = this.files[0];
+                if (excelFile.type === "application/vnd.ms-excel" || excelFile.type === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" || (excelFile.type === "" && (excelFile.name.endsWith("xls") || excelFile.name.endsWith("xlsx")))) {
+                    fileReader.readAsArrayBuffer(excelFile);
+                } else {
+                    $("#result").text("The format of the file you have selected is not supported. Please select a valid Excel file ('.xls, *.xlsx').");
+                    $("#result").show(1000);
+                }
+            }
+
+        }
+
+        function createGrid(data, gridColumns) {
+            if ($("#grid1").data("igGrid") !== undefined) {
+                $("#grid1").igGrid("destroy");
+            }
+
+            $("#grid1").igGrid({
+                columns: gridColumns,
+                autoGenerateColumns: true,
+                dataSource: data,
+                width: "100%"
+            });
+
+            document.getElementById("table_edit").style.visibility = "visible";
+            document.getElementById("confirm_excel").style.visibility = "visible";
+        }
+    </script>
+</body>
+</html>
